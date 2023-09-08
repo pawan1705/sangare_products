@@ -2,7 +2,7 @@ import React from 'react'
 import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon,ShoppingCartIcon, XMarkIcon } from '@heroicons/react/24/outline'
-
+import {Link} from 'react-router-dom';
 const user = {
   name: 'Tom Cook',
   email: 'tom@example.com',
@@ -11,9 +11,9 @@ const user = {
 }
 const navigation = [
   { name: 'Dashboard', href: '#', current: true },
-  { name: 'Team', href: '#', current: false },
-//   { name: 'Projects', href: '#', current: false },
-//   { name: 'Calendar', href: '#', current: false },
+  // { name: 'Team', href: '#', current: false },
+  { name: 'Login', to: '/login', current: false },
+  { name: 'Signup', to: '/signup', current: false },
 //   { name: 'Reports', href: '#', current: false },
 ]
 const userNavigation = [
