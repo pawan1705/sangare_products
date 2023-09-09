@@ -1,14 +1,14 @@
 import React from 'react'
-import Login from '../features/Auth/Login';
+import Checkout from '../features/Checkout/Checkout';
 import Navbar from '../features/navbar/navbar'
-const LoginPage = () => {
+const CheckoutPage = () => {
   return (
     <div>
       <Navbar>
-      <Login></Login>
+      <Checkout></Checkout>
       </Navbar>
     </div>
   )
 }
 
-export default LoginPage;
+export default CheckoutPage;
