@@ -7,6 +7,7 @@ import './App.css';
 import SignupPage from './pages/SignupPage';
 import CartPage from './pages/CartPage';
 import CheckoutPage from './pages/CheckoutPage';
+import ProductDetailPage from './pages/ProductDetailPage';
 // import * as React from "react";
 // import { createRoot } from "react-dom/client";
 import {
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
   {
     path: "checkout",
     element: <CheckoutPage></CheckoutPage>,
+  },
+  {
+    path: "product-detail",
+    element: <ProductDetailPage></ProductDetailPage>,
   },
 ]);
 
