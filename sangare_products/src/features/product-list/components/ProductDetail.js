@@ -70,9 +70,9 @@ export default function ProductDetail() {
 
   return (
      <div className="bg-white">
-      <div className="pt-6">
+      <div className="pt-2">
         <nav aria-label="Breadcrumb">
-          <ol role="list" className="mx-auto flex max-w-2xl items-center space-x-2 px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+          <ol role="list" className="mx-auto flex max-w-2xl items-center space-x-2 px-2 sm:px-6 lg:max-w-7xl lg:px-8">
             {product.breadcrumbs.map((breadcrumb) => (
               <li key={breadcrumb.id}>
                 <div className="flex items-center">

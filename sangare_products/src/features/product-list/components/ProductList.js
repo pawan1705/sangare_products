@@ -27,45 +27,65 @@ const filters = [
     id: "category",
     name: "Category",
     options: [
-      { value: "smartphones", label: "smartphones", checked: false },
-      { value: "laptops", label: "laptops", checked: false },
-      { value: "fragrances", label: "fragrances", checked: false },
-      { value: "skincare", label: "skincare", checked: false },
-      { value: "groceries", label: "groceries", checked: false },
-      { value: "home-decoration", label: "home-decoration", checked: false }
+      { value: 'smartphones', label: 'smartphones', checked: false },
+      { value: 'laptops', label: 'laptops', checked: false },
+      { value: 'fragrances', label: 'fragrances', checked: false },
+      { value: 'skincare', label: 'skincare', checked: false },
+      { value: 'groceries', label: 'groceries', checked: false },
+      { value: 'home-decoration',label: 'homedecoration',checked: false }
     ],
   },
   {
     id: "brand",
     name: "brand",
     options: [
-      { value: "Apple", label: "Apple", checked: false },
-      { value: "Samsung", label: "Samsung", checked: false },
-      { value: "OPPO", label: "OPPO", checked: false },
-      { value: "Huawei", label: "Huawei", checked: false },
-      { value: "Microsoft Surface", label: "Microsoft Surface", checked: false },
-      { value: "Infinix", label: "Infinix", checked: false },
-      { value: "HP Pavilion", label: "HP Pavilion", checked: false },
-      { value: "Impression of Acqua Di Gio", label: "Impression of Acqua Di Gio", checked: false },
-      { value: "Royal_Mirage", label: "Royal_Mirage", checked: false },
-      { value: "Fog Scent Xpressio", label: "Fog Scent Xpressio", checked: false },
-      { value: "Al Munakh", label: "Al Munakh", checked: false },
-      { value: "Lord - Al-Rehab", label: "Lord - Al-Rehab", checked: false },
-      { value: "L'Oreal Paris", label: "L'Oreal Paris", checked: false },
-      { value: "Hemani Tea", label: "Hemani Tea", checked: false },
-      { value: "Dermive", label: "Dermive", checked: false },
-      { value: "ROREC White Rice", label: "ROREC White Rice", checked: false },
-      { value: "Fair & Clear", label: "Fair & Clear", checked: false },
-      { value: "Saaf & Khaas", label: "Saaf & Khaas", checked: false },
-      { value: "Bake Parlor Big", label: "Bake Parlor Big", checked: false },
-      { value: "Baking Food Items", label: "Baking Food Items", checked: false },
-      { value: "fauji", label: "fauji", checked: false },
-      { value: "Boho Decor", label: "Boho Decor", checked: false },
-      { value: "Dry Rose", label: "Dry Rose", checked: false },
-      { value: "Flying Wooden", label: "Flying Wooden", checked: false },
-      { value: "LED Lights", label: "LED Lights", checked: false },
-      { value: "luxury palace", label: "luxury palace", checked: false },
-      { value: "Golden", label: "Golden", checked: false }
+      { value: 'Apple', label: 'Apple', checked: false },
+      { value: 'Samsung', label: 'Samsung', checked: false },
+      { value: 'OPPO', label: 'OPPO', checked: false },
+      { value: 'Huawei', label: 'Huawei', checked: false },
+      { value: 'Microsoft Surface',
+        label: 'Microsoft Surface',
+        checked: false },
+      { value: 'Infinix', label: 'Infinix', checked: false },
+      { value: 'HP Pavilion', label: 'HP Pavilion', checked: false },
+      { value: 'Impression of Acqua Di Gio',
+        label: 'Impression of Acqua Di Gio',
+        checked: false },
+      { value: 'Royal_Mirage', label: 'Royal_Mirage', checked: false },
+      { value: 'Fog Scent Xpressio',
+        label: 'Fog Scent Xpressio',
+        checked: false },
+      { value: 'Al Munakh', label: 'Al Munakh', checked: false },
+      { value: 'Lord - Al-Rehab',
+        label: 'Lord  AlRehab',
+        checked: false },
+      { value: 'L\'Oreal Paris',
+        label: 'L\'Oreal Paris',
+        checked: false },
+      { value: 'Hemani Tea', label: 'Hemani Tea', checked: false },
+      { value: 'Dermive', label: 'Dermive', checked: false },
+      { value: 'ROREC White Rice',
+        label: 'ROREC White Rice',
+        checked: false },
+      { value: 'Fair & Clear', label: 'Fair & Clear', checked: false },
+      { value: 'Saaf & Khaas', label: 'Saaf & Khaas', checked: false },
+      { value: 'Bake Parlor Big',
+        label: 'Bake Parlor Big',
+        checked: false },
+      { value: 'Baking Food Items',
+        label: 'Baking Food Items',
+        checked: false },
+      { value: 'fauji', label: 'fauji', checked: false },
+      { value: 'Dry Rose', label: 'Dry Rose', checked: false },
+      { value: 'Boho Decor', label: 'Boho Decor', checked: false },
+      { value: 'Flying Wooden',
+        label: 'Flying Wooden',
+        checked: false },
+      { value: 'LED Lights', label: 'LED Lights', checked: false },
+      { value: 'luxury palace',
+        label: 'luxury palace',
+        checked: false },
+      { value: 'Golden', label: 'Golden', checked: false } 
     ],
   },
 
@@ -82,6 +102,7 @@ export default function ProductList() {
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
 const products=useSelector(selectAllProducts);
 // doo
+
 const handleFilter=(e,section,option)=>{
   const newFilter={...filter,[section.id]:option.value};
   setFilter(newFilter)
@@ -189,6 +210,7 @@ useEffect(()=>{
                                             defaultValue={option.value}
                                             type="checkbox"
                                             defaultChecked={option.checked}
+                                            onChange={e=>handleFilter(e,section,option)}
                                             className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
                                           />
                                           <label
@@ -213,8 +235,8 @@ useEffect(()=>{
               </Dialog>
             </Transition.Root>
 
-            <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-              <div className="flex items-baseline justify-between border-b border-gray-200 pb-6 pt-24">
+            <main className="mx-auto max-w-7xl px-2 sm:px-2 lg:px-8">
+              <div className="flex items-baseline justify-between border-b border-gray-200 pb-6 pt-10">
                 <h1 className="text-4xl font-bold tracking-tight text-gray-900">
                   All Products
                 </h1>

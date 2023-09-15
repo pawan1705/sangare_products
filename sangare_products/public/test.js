@@ -575,5 +575,6 @@ const products= [
     }
   ]
 
-const brand=new Set([...products.map(p=>p.brand)]);
-brand.map(c=>({value:c,label:c.split('-').join(''),checked:false}))
+  products.map(p=>p.category)//repeated
+const categories=[...new Set([...products.map(p=>p.category)])]; //in set not repeated
+categories.map(c=>({value:c,label:c.split('-').join(''),checked:false}))

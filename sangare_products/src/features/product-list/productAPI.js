@@ -9,11 +9,12 @@ export function fetchAllProducts() {
   );
 }
 
+// teen
 export function fetchProductsByFilters(filter) {
   // filter={"category":"smartphone"}
   let queryString='';
   for(let key in filter){
-    queryString+=`${key}:${filter[key]}&`
+    queryString +=`${key}=${filter[key]}&`
   }
   return new Promise(async(resolve) =>{
     // TODO :we will not hard-code server URL here
